@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letter</title><style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #111;
+        font-family: 'Georgia', serif;
+    }
+
+    .letter {
+        width: 90%;
+        max-width: 650px;
+        padding: 40px;
+        background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.85);
+    }
+
+    .content {
+        position: relative;
+        color: #222;
+        font-size: 20px;
+        line-height: 1.8;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 2.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hidden {
+        margin-top: 25px;
+        font-size: 18px;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .show {
+        opacity: 1;
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #222;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #444;
+    }
+</style></head><body><div class="letter">
+    <div class="overlay"></div><div class="content">
+    <p>
+        Sometimes silence says more than explanations.<br>
+        Sometimes distance protects what words cannot.
+    </p>
+
+    <p>
+        Respect is quiet. It is not repeated.<br>
+        It is felt… or it disappears.
+    </p>
+
+    <p>
+        Some lessons arrive late.<br>
+        But they still arrive.
+    </p>
+
+    <button onclick="reveal()">Continue</button>
+
+    <div id="extra" class="hidden">
+        <p>
+            There are things once accepted in silence.<br>
+            Not because they were right… but because patience mattered.
+        </p>
+
+        <p>
+            Now, peace matters more.
+        </p>
+    </div>
+</div>
+
+</div><script>
+function reveal() {
+    document.getElementById("extra").classList.add("show");
+}
+</script></body>
+</html>
